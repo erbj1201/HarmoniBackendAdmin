@@ -1,0 +1,48 @@
+@model HarmoniBackendAdmin.Models.Product
+
+@{
+    ViewData["Title"] = "Produkter";
+}
+
+<h1>Produkt</h1>
+
+<div>
+    <h2>Detaljer</h2>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ProductName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ProductName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ProductPrice)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ProductPrice)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ProductCategory)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ProductCategory)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ProductImageName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ProductImageName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ApiKeyReq)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ApiKeyReq)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a class="btn btn-dark m-2" asp-action="Edit" asp-route-id="@Model?.Id">Ändra</a> |
+    <a class="btn btn-dark m-2" asp-action="Index">Tillbaka till alla produkter</a>
+</div>

@@ -1,0 +1,36 @@
+@model HarmoniBackendAdmin.Models.Staff
+
+@{
+    ViewData["Title"] = "Personal";
+}
+
+<h1>Personal</h1>
+
+<div>
+    
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.StaffName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.StaffName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.StaffImageName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.StaffImageName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ApiKeyReq)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ApiKeyReq)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a class="btn btn-dark m-2" asp-action="Edit" asp-route-id="@Model?.Id">Ändra</a> |
+    <a class="btn btn-dark m-2" asp-action="Index">Tillbaka till all personal</a>
+</div>

@@ -1,0 +1,57 @@
+@model HarmoniBackendAdmin.Models.Booking
+
+@{
+    ViewData["Title"] = "Bokningar";
+}
+
+<h1>Bokning</h1>
+
+<h2>Lägg till bokning</h2>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="BookingName" class="control-label"></label>
+                <input asp-for="BookingName" class="form-control" />
+                <span asp-validation-for="BookingName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BookingEmail" class="control-label"></label>
+                <input asp-for="BookingEmail" class="form-control" />
+                <span asp-validation-for="BookingEmail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BookingPhone" class="control-label"></label>
+                <input asp-for="BookingPhone" class="form-control" />
+                <span asp-validation-for="BookingPhone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BookingDate" class="control-label"></label>
+                <input asp-for="BookingDate" class="form-control" />
+                <span asp-validation-for="BookingDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TreatmentId" class="control-label"></label>
+                <select asp-for="TreatmentId" class ="form-control" asp-items="ViewBag.TreatmentId"></select>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="ApiKeyReq" /> @Html.DisplayNameFor(model => model.ApiKeyReq)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Lägg till bokning" class="btn btn-dark m-2" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a class="btn btn-dark m-2" asp-action="Index">Tillbaka till bokningslista</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

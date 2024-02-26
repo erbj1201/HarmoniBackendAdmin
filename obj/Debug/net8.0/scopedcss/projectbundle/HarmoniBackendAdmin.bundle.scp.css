@@ -1,0 +1,49 @@
+/* _content/HarmoniBackendAdmin/Views/Shared/_Layout.cshtml.rz.scp.css */
+/* Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand[b-tlpfw9n9fm] {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+a[b-tlpfw9n9fm] {
+  color: #450254;
+}
+
+.btn-customize[b-tlpfw9n9fm]{
+  color: #fff;
+  background-color: #500527;
+  border-color: #000000;
+}
+
+.nav-pills .nav-link.active[b-tlpfw9n9fm], .nav-pills .show > .nav-link[b-tlpfw9n9fm] {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #000;
+}
+
+.border-top[b-tlpfw9n9fm] {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom[b-tlpfw9n9fm] {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow[b-tlpfw9n9fm] {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy[b-tlpfw9n9fm] {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+.footer[b-tlpfw9n9fm] {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px;
+}

@@ -1,0 +1,49 @@
+@model IEnumerable<HarmoniBackendAdmin.Models.Staff>
+
+@{
+    ViewData["Title"] = "Personal";
+}
+
+<h1>Start</h1>
+<h2>Personal</h2>
+
+<p>
+    <a class="btn btn-dark" asp-action="Create">Lägg till personal</a>
+</p>
+<h3>Lista över all personal</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.StaffName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StaffImageName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ApiKeyReq)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.StaffName)
+            </td>
+            <td>
+                <a href="images/@Html.DisplayFor(modelItem => item.StaffImageName)" target="_blank">@Html.DisplayFor(modelItem => item.StaffImageName)</a>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApiKeyReq)
+            </td>
+            <td>
+                <a class= "btn btn-dark m-1" asp-action="Edit" asp-route-id="@item.Id">Ändra</a> |
+                <a class= "btn btn-dark m-1" asp-action="Details" asp-route-id="@item.Id">Detajler</a> |
+                <a class= "btn btn-dark m-1" asp-action="Delete" asp-route-id="@item.Id">Radera</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

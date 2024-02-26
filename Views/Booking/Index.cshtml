@@ -1,0 +1,67 @@
+@model IEnumerable<HarmoniBackendAdmin.Models.Booking>
+
+@{
+    ViewData["Title"] = "Bokningar";
+}
+
+<h1>Start</h1>
+<h2>Bokningar</h2>
+
+<p>
+    <a class="btn btn-dark" asp-action="Create">Lägg till bokning</a>
+</p>
+<h3>Lista över alla bokningar</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.BookingName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BookingEmail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BookingPhone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BookingDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Treatments)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ApiKeyReq)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BookingName)
+            </td >
+            <td>
+                @Html.DisplayFor(modelItem => item.BookingEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BookingPhone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BookingDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Treatments.TreatmentCategory)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApiKeyReq)
+            </td>
+            <td>
+                <a class="btn btn-dark m-1" asp-action="Edit" asp-route-id="@item.Id">Ändra</a> |
+                <a class="btn btn-dark m-1" asp-action="Details" asp-route-id="@item.Id">Detaljer</a> |
+                <a class="btn btn-dark m-1" asp-action="Delete" asp-route-id="@item.Id">Radera</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

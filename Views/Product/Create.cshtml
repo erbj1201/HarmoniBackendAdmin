@@ -1,0 +1,58 @@
+@model HarmoniBackendAdmin.Models.Product
+
+@{
+    ViewData["Title"] = "Produkter";
+}
+
+<h1>Produkt</h1>
+
+<h2>Lägg till produkt</h2>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ProductName" class="control-label"></label>
+                <input asp-for="ProductName" class="form-control" />
+                <span asp-validation-for="ProductName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductPrice" class="control-label"></label>
+                <input asp-for="ProductPrice" class="form-control" />
+                <span asp-validation-for="ProductPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductCategory" class="control-label"></label>
+                <select asp-for="ProductCategory"class="form-control mb-2" />
+                <option selected disabled>Välj kategori</option>
+                <option value="Schampo">Hår</option>
+                <option value="Balsam">Ansikte</option>
+                <option value="Kropp">Kropp</option>
+                <option value="Övrigt">Övrigt</option>
+                <span asp-validation-for="ProductCategory" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductImageFile" class="control-label"></label>
+                <input asp-for="ProductImageFile" class="form-control" accept="image/*" />
+                <span asp-validation-for="ProductImageFile" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="ApiKeyReq" /> @Html.DisplayNameFor(model => model.ApiKeyReq)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Lägg till produkt" class="btn btn-dark m-2" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a class="btn btn-dark m-2" asp-action="Index">Tillbaka till alla produkter</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

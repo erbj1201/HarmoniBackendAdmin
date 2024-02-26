@@ -1,0 +1,62 @@
+@model IEnumerable<HarmoniBackendAdmin.Models.Product>
+
+@{
+    ViewData["Title"] = "Produkter";
+}
+
+<h1>Start</h1>
+<h2>Produkter</h2>
+
+<p>
+    <a class="btn btn-dark" asp-action="Create">Lägg till produkt</a>
+</p>
+<h3>Lista över alla produkter</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductCategory)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductImageName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ApiKeyReq)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductCategory)
+            </td>
+            <td>
+               <a href="images/@Html.DisplayFor(modelItem => item.ProductImageName)" target="_blank"> @Html.DisplayFor(modelItem => item.ProductImageName)
+            </a>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApiKeyReq)
+            </td>
+            <td>
+                <a class="btn btn-dark m-1" asp-action="Edit" asp-route-id="@item.Id">Ändra</a> |
+                <a class="btn btn-dark m-1" asp-action="Details" asp-route-id="@item.Id">Detaljer</a> |
+                <a class="btn btn-dark m-1" asp-action="Delete" asp-route-id="@item.Id">Radera</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

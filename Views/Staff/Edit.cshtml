@@ -1,0 +1,44 @@
+@model HarmoniBackendAdmin.Models.Staff
+
+@{
+    ViewData["Title"] = "Personal";
+}
+
+<h1>Personal</h1>
+
+<h2>Ändra</h2>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="StaffName" class="control-label"></label>
+                <input asp-for="StaffName" class="form-control" />
+                <span asp-validation-for="StaffName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StaffImageName" class="control-label"></label>
+                <input readonly asp-for="StaffImageName" class="form-control" />
+                <span asp-validation-for="StaffImageName" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="ApiKeyReq" /> @Html.DisplayNameFor(model => model.ApiKeyReq)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Spara ändringar" class="btn btn-dark m-2" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a class="btn btn-dark m-2" asp-action="Index">Tillbaka till all personal</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

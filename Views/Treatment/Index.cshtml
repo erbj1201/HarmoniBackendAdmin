@@ -1,0 +1,66 @@
+@model IEnumerable<HarmoniBackendAdmin.Models.Treatment>
+
+@{
+    ViewData["Title"] = "Behandlingar";
+}
+
+<h1>Start</h1>
+<h2>Behandlingar</h2>
+<p>
+    <a class="btn btn-dark" asp-action="Create">Lägg till behandling</a>
+</p>
+<h3>Lista över alla behandlingar</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TreatmentName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TreatmentDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TreatmentPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TreatmentCategory)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TreatmentImageName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ApiKeyReq)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TreatmentName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TreatmentDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TreatmentPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TreatmentCategory)
+            </td>
+            <td>
+               <a href="images/@Html.DisplayFor(modelItem => item.TreatmentImageName)" target="_blank">@Html.DisplayFor(modelItem => item.TreatmentImageName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApiKeyReq)
+            </td>
+            <td>
+                <a class="btn btn-dark m-1"asp-action="Edit" asp-route-id="@item.Id">Ändra</a> |
+                <a class="btn btn-dark m-1" asp-action="Details" asp-route-id="@item.Id">Detaljer</a> |
+                <a class="btn btn-dark m-1" asp-action="Delete" asp-route-id="@item.Id">Radera</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
