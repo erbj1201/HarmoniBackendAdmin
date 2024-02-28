@@ -286,3 +286,4 @@ C:\Users\Admin\OneDrive\Skrivbord\Webbutveckling\dt191g_webbutveckling_med_.NET\
 C:\Users\Admin\OneDrive\Skrivbord\Webbutveckling\dt191g_webbutveckling_med_.NET\projekt\HarmoniBackendAdmin\obj\Debug\net8.0\HarmoniBackendAdmin.pdb
 C:\Users\Admin\OneDrive\Skrivbord\Webbutveckling\dt191g_webbutveckling_med_.NET\projekt\HarmoniBackendAdmin\obj\Debug\net8.0\HarmoniBackendAdmin.genruntimeconfig.cache
 C:\Users\Admin\OneDrive\Skrivbord\Webbutveckling\dt191g_webbutveckling_med_.NET\projekt\HarmoniBackendAdmin\obj\Debug\net8.0\ref\HarmoniBackendAdmin.dll
+C:\Users\Admin\OneDrive\Skrivbord\Webbutveckling\dt191g_webbutveckling_med_.NET\projekt\HarmoniBackendAdmin\obj\Debug\net8.0\HarmoniBackendAdmin.sourcelink.json

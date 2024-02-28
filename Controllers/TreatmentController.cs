@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using HarmoniBackendAdmin.Data;
 using HarmoniBackendAdmin.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace HarmoniBackendAdmin.Controllers
 {
+    [Authorize]
     public class TreatmentController : Controller
     {
         private readonly HarmoniDbContext _context;
@@ -36,7 +38,6 @@ namespace HarmoniBackendAdmin.Controllers
             {
                 return NotFound();
             }
-
             var treatment = await _context.Treatments
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (treatment == null)
@@ -72,9 +73,8 @@ namespace HarmoniBackendAdmin.Controllers
                     string path =Path.Combine(wwwRootPath + "/images", treatmentFileName);
 
                     //store in filesystem
-                    using(var fileStream= new FileStream (path, FileMode.Create)){
-                        await treatment.TreatmentImageFile.CopyToAsync(fileStream);
-                    }
+                    using var fileStream = new FileStream(path, FileMode.Create);
+                    await treatment.TreatmentImageFile.CopyToAsync(fileStream);
                 }
                 _context.Add(treatment);
                 await _context.SaveChangesAsync();
@@ -90,7 +90,6 @@ namespace HarmoniBackendAdmin.Controllers
             {
                 return NotFound();
             }
-
             var treatment = await _context.Treatments.FindAsync(id);
             if (treatment == null)
             {
@@ -141,7 +140,6 @@ namespace HarmoniBackendAdmin.Controllers
             {
                 return NotFound();
             }
-
             var treatment = await _context.Treatments
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (treatment == null)

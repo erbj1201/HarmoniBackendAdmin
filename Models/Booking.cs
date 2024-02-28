@@ -12,7 +12,6 @@ public class Booking{
     public string? BookingName {get; set;}
     [Required(ErrorMessage = "Mejladress måste anges. Ange en mejladress")]
     [EmailAddress]
-
     [Display(Name = "Mejladress:")]
     public string? BookingEmail {get; set;}
     [Required(ErrorMessage = "Telefonnummer måste anges. Ange ett telefonnummer")]

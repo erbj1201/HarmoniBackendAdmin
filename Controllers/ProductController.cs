@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using HarmoniBackendAdmin.Data;
 using HarmoniBackendAdmin.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace HarmoniBackendAdmin.Controllers
 {
@@ -22,13 +23,13 @@ namespace HarmoniBackendAdmin.Controllers
             _hostEnvironment = hostEnvironment;
             wwwRootPath = hostEnvironment.WebRootPath;
         }
-
+[Authorize]
         // GET: Product
         public async Task<IActionResult> Index()
         {
             return View(await _context.Products.ToListAsync());
         }
-
+[Authorize]
         // GET: Product/Details/5
         public async Task<IActionResult> Details(int? id)
         {
@@ -36,7 +37,7 @@ namespace HarmoniBackendAdmin.Controllers
             {
                 return NotFound();
             }
-
+        
             var product = await _context.Products
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (product == null)
@@ -46,13 +47,13 @@ namespace HarmoniBackendAdmin.Controllers
 
             return View(product);
         }
-
+[Authorize]
         // GET: Product/Create
         public IActionResult Create()
         {
             return View();
         }
-
+[Authorize]
         // POST: Product/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -72,9 +73,8 @@ namespace HarmoniBackendAdmin.Controllers
                     string path =Path.Combine(wwwRootPath + "/images", productFileName);
 
                     //store in filesystem
-                    using(var fileStream= new FileStream (path, FileMode.Create)){
-                        await product.ProductImageFile.CopyToAsync(fileStream);
-                    }
+                    using var fileStream = new FileStream(path, FileMode.Create);
+                    await product.ProductImageFile.CopyToAsync(fileStream);
                 }
                 _context.Add(product);
                 await _context.SaveChangesAsync();
@@ -82,7 +82,7 @@ namespace HarmoniBackendAdmin.Controllers
             }
             return View(product);
         }
-
+[Authorize]
         // GET: Product/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -98,7 +98,7 @@ namespace HarmoniBackendAdmin.Controllers
             }
             return View(product);
         }
-
+[Authorize]
         // POST: Product/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -135,7 +135,7 @@ namespace HarmoniBackendAdmin.Controllers
             }
             return View(product);
         }
-
+[Authorize]
         // GET: Product/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
@@ -143,7 +143,6 @@ namespace HarmoniBackendAdmin.Controllers
             {
                 return NotFound();
             }
-
             var product = await _context.Products
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (product == null)
@@ -153,12 +152,12 @@ namespace HarmoniBackendAdmin.Controllers
 
             return View(product);
         }
-
+[Authorize]
         // POST: Product/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
-        {
+        { 
             var product = await _context.Products.FindAsync(id);
             if (product != null)
             {
