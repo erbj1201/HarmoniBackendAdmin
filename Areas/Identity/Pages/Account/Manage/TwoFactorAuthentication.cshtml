@@ -1,0 +1,71 @@
+﻿@page
+@using Microsoft.AspNetCore.Http.Features
+@model TwoFactorAuthenticationModel
+@{
+    ViewData["Title"] = "Tvåfaktorsautentisering";
+    ViewData["ActivePage"] = ManageNavPages.TwoFactorAuthentication;
+}
+
+<partial name="_StatusMessage" for="StatusMessage" />
+<h3>@ViewData["Title"]</h3>
+@{
+    var consentFeature = HttpContext.Features.Get<ITrackingConsentFeature>();
+    @if (consentFeature?.CanTrack ?? true)
+    {
+        @if (Model.Is2faEnabled)
+        {
+            if (Model.RecoveryCodesLeft == 0)
+            {
+                <div class="alert alert-danger">
+                    <strong>Du har inga återställningskoder kvar.</strong>
+                    <p>Du behöver <a asp-page="./GenerateRecoveryCodes"> nya återställningskoder</a> innan du kan logga in med en återställnigskod.</p>
+                </div>
+            }
+            else if (Model.RecoveryCodesLeft == 1)
+            {
+                <div class="alert alert-danger">
+                    <strong>Du har en återställningskod kvar.</strong>
+                    <p>Du kan <a asp-page="./GenerateRecoveryCodes">generera nya återställningskoder här</a>.</p>
+                </div>
+            }
+            else if (Model.RecoveryCodesLeft <= 3)
+            {
+                <div class="alert alert-warning">
+                    <strong>Du har @Model.RecoveryCodesLeft återställningskoder kvar.</strong>
+                    <p>Du borde <a asp-page="./GenerateRecoveryCodes">generera nya återställningskoder</a>.</p>
+                </div>
+            }
+
+            if (Model.IsMachineRemembered)
+            {
+                <form method="post" style="display: inline-block">
+                    <button type="submit" class="btn btn-dark">Glöm den här webbläsaren</button>
+                </form>
+            }
+            <a asp-page="./Disable2fa" class="btn btn-primary">Stäng av tvåfaktorsautentisering</a>
+            <a asp-page="./GenerateRecoveryCodes" class="btn btn-dark">Åtesrställ återställningskoder</a>
+        }
+
+        <h4>Autentiseringsapp</h4>
+        @if (!Model.HasAuthenticator)
+        {
+            <a id="enable-authenticator" asp-page="./EnableAuthenticator" class="btn btn-dark">Lägg till autentiseringsapp</a>
+        }
+        else
+        {
+            <a id="enable-authenticator" asp-page="./EnableAuthenticator" class="btn btn-dark">Ställ in autentiseringsapp</a>
+            <a id="reset-authenticator" asp-page="./ResetAuthenticator" class="btn btn-dark">Återställ autentiseringsapp</a>
+        }
+    }
+    else
+    {
+        <div class="alert alert-danger">
+            <strong>Privacy och cookie policys har inte blivit accepterade.</strong>
+            <p>Du måste acceptera policys innan du kan godkänna tvåfaktorsautentisering</p>
+        </div>
+    }
+}
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

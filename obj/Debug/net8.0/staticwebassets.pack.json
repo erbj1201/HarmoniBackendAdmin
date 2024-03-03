@@ -21,8 +21,20 @@
       "PackagePath": "staticwebassets\\header_large (5).jpg"
     },
     {
+      "Id": "C:\\Users\\Admin\\OneDrive\\Skrivbord\\Webbutveckling\\dt191g_webbutveckling_med_.NET\\projekt\\HarmoniBackendAdmin\\wwwroot\\header_largemassage.jpg",
+      "PackagePath": "staticwebassets\\header_largemassage.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\OneDrive\\Skrivbord\\Webbutveckling\\dt191g_webbutveckling_med_.NET\\projekt\\HarmoniBackendAdmin\\wwwroot\\header_mediummassage.jpg",
+      "PackagePath": "staticwebassets\\header_mediummassage.jpg"
+    },
+    {
       "Id": "C:\\Users\\Admin\\OneDrive\\Skrivbord\\Webbutveckling\\dt191g_webbutveckling_med_.NET\\projekt\\HarmoniBackendAdmin\\wwwroot\\header_small (2).jpg",
       "PackagePath": "staticwebassets\\header_small (2).jpg"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\OneDrive\\Skrivbord\\Webbutveckling\\dt191g_webbutveckling_med_.NET\\projekt\\HarmoniBackendAdmin\\wwwroot\\header_smallmassage.jpg",
+      "PackagePath": "staticwebassets\\header_smallmassage.jpg"
     },
     {
       "Id": "C:\\Users\\Admin\\OneDrive\\Skrivbord\\Webbutveckling\\dt191g_webbutveckling_med_.NET\\projekt\\HarmoniBackendAdmin\\wwwroot\\images\\BraatthaExpress,node243639382.png",
@@ -75,6 +87,10 @@
     {
       "Id": "C:\\Users\\Admin\\OneDrive\\Skrivbord\\Webbutveckling\\dt191g_webbutveckling_med_.NET\\projekt\\HarmoniBackendAdmin\\wwwroot\\images\\DSC09451244444944.JPG",
       "PackagePath": "staticwebassets\\images\\DSC09451244444944.JPG"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\OneDrive\\Skrivbord\\Webbutveckling\\dt191g_webbutveckling_med_.NET\\projekt\\HarmoniBackendAdmin\\wwwroot\\images\\DSC09452241209747.JPG",
+      "PackagePath": "staticwebassets\\images\\DSC09452241209747.JPG"
     },
     {
       "Id": "C:\\Users\\Admin\\OneDrive\\Skrivbord\\Webbutveckling\\dt191g_webbutveckling_med_.NET\\projekt\\HarmoniBackendAdmin\\wwwroot\\images\\DSC09452244806666.JPG",

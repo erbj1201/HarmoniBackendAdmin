@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity;
+@inject SignInManager<IdentityUser> SignInManager;
+
+<!DOCTYPE html>
 <html lang="se">
 <head>
     <meta charset="utf-8" />
@@ -10,6 +13,7 @@
 </head>
 <body>
     <header>
+         
         <nav class="navbar navbar-expand-sm navbar-light navbar-toggleable-sm border-bottom box-shadow mb-3">
             <div class="container-fluid">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><img src="~/logo.png" alt="Haromin spa och relax"></a>
@@ -19,6 +23,7 @@
                 </button>
                 <div role="navigation" class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1 nav justify-content-center">
+                        @if(SignInManager.IsSignedIn(User)){
                          <li class="nav-item text-center">
                             <a class="nav-link btn-sm btn-dark text-white m-1" asp-area="" asp-controller="Home" asp-action="Index">Start</a>
                         </li>
@@ -34,11 +39,13 @@
                          <li class="nav-item text-center">
                             <a class="nav-link btn-sm btn-dark text-white m-1" asp-area="" asp-controller="Booking" asp-action="Index">Bokningar</a>
                         </li>
-                    </ul
+                        }
+                    </ul>
                     <partial name="_LoginPartial" />
                 </div>
             </div>
         </nav>
+        
     </header>
     <div class="container">
         <main role="main" class="pb-3">
