@@ -28,9 +28,6 @@
             <th>
                 @Html.DisplayNameFor(model => model.TreatmentImageName)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ApiKeyReq)
-            </th>
             <th></th>
         </tr>
     </thead>
@@ -50,11 +47,9 @@
                 @Html.DisplayFor(modelItem => item.TreatmentCategory)
             </td>
             <td>
-               <a href="images/@Html.DisplayFor(modelItem => item.TreatmentImageName)" target="_blank">@Html.DisplayFor(modelItem => item.TreatmentImageName)
+               <a href="images/@Html.DisplayFor(modelItem => item.TreatmentImageName)" target="_blank">@Html.DisplayFor(modelItem => item.TreatmentImageName)</a>
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ApiKeyReq)
-            </td>
+        
             <td>
                 <a class="btn btn-dark m-1"asp-action="Edit" asp-route-id="@item.Id">Ändra</a> |
                 <a class="btn btn-dark m-1" asp-action="Details" asp-route-id="@item.Id">Detaljer</a> |

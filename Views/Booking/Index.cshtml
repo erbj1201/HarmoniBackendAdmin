@@ -29,9 +29,6 @@
             <th>
                 @Html.DisplayNameFor(model => model.Treatments)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ApiKeyReq)
-            </th>
             <th></th>
         </tr>
     </thead>
@@ -52,9 +49,6 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Treatments.TreatmentName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ApiKeyReq)
             </td>
             <td>
                 <a class="btn btn-dark m-1" asp-action="Edit" asp-route-id="@item.Id">Ändra</a> |

@@ -20,9 +20,6 @@
             <th>
                 @Html.DisplayNameFor(model => model.StaffImageName)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ApiKeyReq)
-            </th>
             <th></th>
         </tr>
     </thead>
@@ -34,9 +31,6 @@
             </td>
             <td>
                 <a href="images/@Html.DisplayFor(modelItem => item.StaffImageName)" target="_blank">@Html.DisplayFor(modelItem => item.StaffImageName)</a>
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ApiKeyReq)
             </td>
             <td>
                 <a class= "btn btn-dark m-1" asp-action="Edit" asp-route-id="@item.Id">Ändra</a> |

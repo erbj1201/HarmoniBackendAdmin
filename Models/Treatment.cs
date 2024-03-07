@@ -26,5 +26,4 @@ public class Treatment{
     public IFormFile? TreatmentImageFile {get; set;}
 
     public List <Booking>? Bookingss {get; set;}
-    public bool ApiKeyReq {get; set;} =false;
 }

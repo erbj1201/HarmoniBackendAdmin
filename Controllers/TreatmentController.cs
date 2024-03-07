@@ -59,7 +59,7 @@ namespace HarmoniBackendAdmin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,TreatmentName,TreatmentDescription,TreatmentPrice,TreatmentCategory,TreatmentImageFile,ApiKeyReq")] Treatment treatment)
+        public async Task<IActionResult> Create([Bind("Id,TreatmentName,TreatmentDescription,TreatmentPrice,TreatmentCategory,TreatmentImageFile")] Treatment treatment)
         {
             if (ModelState.IsValid)
             {
@@ -103,7 +103,7 @@ namespace HarmoniBackendAdmin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,TreatmentName,TreatmentDescription,TreatmentPrice,TreatmentCategory,TreatmentImageName,ApiKeyReq")] Treatment treatment)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,TreatmentName,TreatmentDescription,TreatmentPrice,TreatmentCategory,TreatmentImageName")] Treatment treatment)
         {
             if (id != treatment.Id)
             {

@@ -17,49 +17,49 @@ namespace  HarmoniBackendAdmin.Areas.Identity.Pages.Account.Manage
         ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
         ///     directly from your code. This API may change or be removed in future releases.
         /// </summary>
-        public static string Index => "Profil";
+        public static string Index => "Index";
 
         /// <summary>
         ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
         ///     directly from your code. This API may change or be removed in future releases.
         /// </summary>
-        public static string Email => "Mejladress";
+        public static string Email => "Email";
 
         /// <summary>
         ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
         ///     directly from your code. This API may change or be removed in future releases.
         /// </summary>
-        public static string ChangePassword => "Byt lösenord";
+        public static string ChangePassword => "ChangePassword";
 
         /// <summary>
         ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
         ///     directly from your code. This API may change or be removed in future releases.
         /// </summary>
-        public static string DownloadPersonalData => "Ladda ner personlig data";
+        public static string DownloadPersonalData => "DownloadPersonalData";
 
         /// <summary>
         ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
         ///     directly from your code. This API may change or be removed in future releases.
         /// </summary>
-        public static string DeletePersonalData => "Radera personlig data";
+        public static string DeletePersonalData => "DeletePersonalData";
 
         /// <summary>
         ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
         ///     directly from your code. This API may change or be removed in future releases.
         /// </summary>
-        public static string ExternalLogins => "Extern inloggning";
+        public static string ExternalLogins => "ExternalLogins";
 
         /// <summary>
         ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
         ///     directly from your code. This API may change or be removed in future releases.
         /// </summary>
-        public static string PersonalData => "Personlig data";
+        public static string PersonalData => "PersonalData";
 
         /// <summary>
         ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
         ///     directly from your code. This API may change or be removed in future releases.
         /// </summary>
-        public static string TwoFactorAuthentication => "Tvåfaktorsautentisering";
+        public static string TwoFactorAuthentication => "TwoFactorAuthentication";
 
         /// <summary>
         ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used

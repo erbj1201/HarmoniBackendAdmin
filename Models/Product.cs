@@ -28,5 +28,4 @@ public class Product
     [Display(Name = "Bild:")]
     [NotMapped]
     public IFormFile? ProductImageFile { get; set; }
-    public bool ApiKeyReq { get; set; } = false;
 }

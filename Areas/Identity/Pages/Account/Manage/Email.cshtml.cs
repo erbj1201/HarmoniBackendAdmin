@@ -130,7 +130,7 @@ namespace HarmoniBackendAdmin.Areas.Identity.Pages.Account.Manage
                     "Bekräfta din mejladress",
                     $"Bekräfta ditt konto <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>genom att klicka här</a>.");
 
-                StatusMessage = "En bekräftelselänk för att ändra lösenord har skickats ut, kontrollera din mejl"; 
+                StatusMessage = "En bekräftelselänk för att ändra mejladress har skickats ut, kontrollera din mejl"; 
                 return RedirectToPage();
             }
 

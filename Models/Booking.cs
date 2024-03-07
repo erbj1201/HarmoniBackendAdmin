@@ -29,11 +29,8 @@ namespace HarmoniBackendAdmin.Models;
         [Required(ErrorMessage = "Du måste välja en behandling")]
         [Display(Name = "Behandling:")]
         public int TreatmentId { get; set; }
-
         [Display(Name = "Behandling:")]
         public Treatment? Treatments { get; set; }
-
-        public bool ApiKeyReq { get; set; } = false;
     }
 
 

@@ -73,8 +73,8 @@ namespace HarmoniBackendAdmin.Areas.Identity.Pages.Account
 
                 await _emailSender.SendEmailAsync(
                     Input.Email,
-                    "Reset Password",
-                    $"Please reset your password by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
+                    "Återställ lösenord",
+                    $"Återställ ditt lösenord <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>genom att klicka här</a>.");
 
                 return RedirectToPage("./ForgotPasswordConfirmation");
             }

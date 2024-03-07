@@ -59,7 +59,7 @@ public async Task <IActionResult> GetBooking(){
     return Ok(await _context.Bookings.ToListAsync());
 }
 
-//Get for staff
+//Post for booking
 [Route("api/booking")]
 [HttpPost]
 [Consumes("application/json")]

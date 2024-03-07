@@ -37,11 +37,6 @@
                 <select asp-for="TreatmentId" class ="form-control" asp-items="ViewBag.TreatmentId"></select>
                 <span asp-validation-for="TreatmentId" class="text-danger"></span>
             </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="ApiKeyReq" /> @Html.DisplayNameFor(model => model.ApiKeyReq)
-                </label>
-            </div>
             <div class="form-group">
                 <input type="submit" value="Lägg till bokning" class="btn btn-dark m-2" />
             </div>

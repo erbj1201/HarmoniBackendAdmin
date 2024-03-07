@@ -15,7 +15,6 @@ public class Staff{
     [Display(Name = "Bild:")]
     [NotMapped]
     public IFormFile? StaffImageFile { get; set; }
-    public bool ApiKeyReq {get; set;} =false;
 }
 
 

@@ -33,7 +33,6 @@ namespace HarmoniBackendAdmin.Controllers
             {
                 return NotFound();
             }
-
             var booking = await _context.Bookings
                 .Include(b => b.Treatments)
                 .FirstOrDefaultAsync(m => m.Id == id);
@@ -57,7 +56,7 @@ namespace HarmoniBackendAdmin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,BookingName,BookingEmail,BookingPhone,BookingDate,TreatmentId,ApiKeyReq")] Booking booking)
+        public async Task<IActionResult> Create([Bind("Id,BookingName,BookingEmail,BookingPhone,BookingDate,TreatmentId")] Booking booking)
         {
             if (ModelState.IsValid)
             {
@@ -91,7 +90,7 @@ namespace HarmoniBackendAdmin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,BookingName,BookingEmail,BookingPhone,BookingDate,TreatmentId,ApiKeyReq")] Booking booking)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,BookingName,BookingEmail,BookingPhone,BookingDate,TreatmentId")] Booking booking)
         {
             if (id != booking.Id)
             {

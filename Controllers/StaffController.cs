@@ -59,7 +59,7 @@ namespace HarmoniBackendAdmin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,StaffName,StaffImageFile,ApiKeyReq")] Staff staff)
+        public async Task<IActionResult> Create([Bind("Id,StaffName,StaffImageFile")] Staff staff)
         {
             if (ModelState.IsValid)
             {
@@ -105,7 +105,7 @@ namespace HarmoniBackendAdmin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,StaffName,StaffImageName,ApiKeyReq")] Staff staff)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,StaffName,StaffImageName")] Staff staff)
         {
             if (id != staff.Id)
             {
