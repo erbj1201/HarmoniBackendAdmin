@@ -7,9 +7,10 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using HarmoniBackendAdmin.Data;
 using HarmoniBackendAdmin.Models;
+using Microsoft.AspNetCore.Authorization;
 
-namespace HarmoniBackendAdmin.Controllers
-{
+namespace HarmoniBackendAdmin.Controllers;
+[Authorize]
     public class BookingController : Controller
     {
         private readonly HarmoniDbContext _context;
@@ -43,14 +44,12 @@ namespace HarmoniBackendAdmin.Controllers
 
             return View(booking);
         }
-
         // GET: Booking/Create
         public IActionResult Create()
         {
             ViewData["TreatmentId"] = new SelectList(_context.Treatments, "Id", "TreatmentName");
             return View();
         }
-
         // POST: Booking/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -67,7 +66,6 @@ namespace HarmoniBackendAdmin.Controllers
             ViewData["TreatmentId"] = new SelectList(_context.Treatments, "Id", "TreatmentName", booking.TreatmentId);
             return View(booking);
         }
-
         // GET: Booking/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -84,7 +82,6 @@ namespace HarmoniBackendAdmin.Controllers
             ViewData["TreatmentId"] = new SelectList(_context.Treatments, "Id", "TreatmentName", booking.TreatmentId);
             return View(booking);
         }
-
         // POST: Booking/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -120,7 +117,6 @@ namespace HarmoniBackendAdmin.Controllers
             ViewData["TreatmentId"] = new SelectList(_context.Treatments, "Id", "TreatmentName", booking.TreatmentId);
             return View(booking);
         }
-
         // GET: Booking/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
@@ -139,7 +135,6 @@ namespace HarmoniBackendAdmin.Controllers
 
             return View(booking);
         }
-
         // POST: Booking/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
@@ -160,4 +155,3 @@ namespace HarmoniBackendAdmin.Controllers
             return _context.Bookings.Any(e => e.Id == id);
         }
     }
-}

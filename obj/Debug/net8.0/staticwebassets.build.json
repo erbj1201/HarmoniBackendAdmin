@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "uT8wEp3qdSE0Wk/PWhbUmc51uSpZJ1NVBPB2Nuy29bs=",
+  "Hash": "GvwJtS/qAyCGp/BqZGoap5QZ1mVSTw4YfdtprN5ELVc=",
   "Source": "HarmoniBackendAdmin",
   "BasePath": "_content/HarmoniBackendAdmin",
   "Mode": "Default",
@@ -1383,6 +1383,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\Dinstycketext241448497.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Admin\\OneDrive\\Skrivbord\\Webbutveckling\\dt191g_webbutveckling_med_.NET\\projekt\\HarmoniBackendAdmin\\wwwroot\\images\\Dinstycketext241759428.jpg",
+      "SourceId": "HarmoniBackendAdmin",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\OneDrive\\Skrivbord\\Webbutveckling\\dt191g_webbutveckling_med_.NET\\projekt\\HarmoniBackendAdmin\\wwwroot\\",
+      "BasePath": "_content/HarmoniBackendAdmin",
+      "RelativePath": "images/Dinstycketext241759428.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\Dinstycketext241759428.jpg"
     },
     {
       "Identity": "C:\\Users\\Admin\\OneDrive\\Skrivbord\\Webbutveckling\\dt191g_webbutveckling_med_.NET\\projekt\\HarmoniBackendAdmin\\wwwroot\\images\\Dinstycketext245012739.jpg",

@@ -9,8 +9,8 @@ using HarmoniBackendAdmin.Data;
 using HarmoniBackendAdmin.Models;
 using Microsoft.AspNetCore.Authorization;
 
-namespace HarmoniBackendAdmin.Controllers
-{
+namespace HarmoniBackendAdmin.Controllers;
+
     [Authorize]
     public class TreatmentController : Controller
     {
@@ -170,4 +170,4 @@ namespace HarmoniBackendAdmin.Controllers
             return _context.Treatments.Any(e => e.Id == id);
         }
     }
-}
+

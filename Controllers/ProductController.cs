@@ -9,8 +9,8 @@ using HarmoniBackendAdmin.Data;
 using HarmoniBackendAdmin.Models;
 using Microsoft.AspNetCore.Authorization;
 
-namespace HarmoniBackendAdmin.Controllers
-{
+namespace HarmoniBackendAdmin.Controllers;
+[Authorize]
     public class ProductController : Controller
     {
         private readonly HarmoniDbContext _context;
@@ -23,13 +23,11 @@ namespace HarmoniBackendAdmin.Controllers
             _hostEnvironment = hostEnvironment;
             wwwRootPath = hostEnvironment.WebRootPath;
         }
-[Authorize]
         // GET: Product
         public async Task<IActionResult> Index()
         {
             return View(await _context.Products.ToListAsync());
         }
-[Authorize]
         // GET: Product/Details/5
         public async Task<IActionResult> Details(int? id)
         {
@@ -47,13 +45,11 @@ namespace HarmoniBackendAdmin.Controllers
 
             return View(product);
         }
-[Authorize]
         // GET: Product/Create
         public IActionResult Create()
         {
             return View();
         }
-[Authorize]
         // POST: Product/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -82,7 +78,6 @@ namespace HarmoniBackendAdmin.Controllers
             }
             return View(product);
         }
-[Authorize]
         // GET: Product/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -98,7 +93,6 @@ namespace HarmoniBackendAdmin.Controllers
             }
             return View(product);
         }
-[Authorize]
         // POST: Product/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -135,7 +129,6 @@ namespace HarmoniBackendAdmin.Controllers
             }
             return View(product);
         }
-[Authorize]
         // GET: Product/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
@@ -152,7 +145,6 @@ namespace HarmoniBackendAdmin.Controllers
 
             return View(product);
         }
-[Authorize]
         // POST: Product/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
@@ -173,4 +165,4 @@ namespace HarmoniBackendAdmin.Controllers
             return _context.Products.Any(e => e.Id == id);
         }
     }
-}
+
