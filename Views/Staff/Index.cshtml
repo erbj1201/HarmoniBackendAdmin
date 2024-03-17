@@ -17,9 +17,6 @@
             <th>
                 @Html.DisplayNameFor(model => model.StaffName)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.StaffImageName)
-            </th>
             <th>Hantera personal:</th>
         </tr>
     </thead>
@@ -28,9 +25,6 @@
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.StaffName)
-            </td>
-            <td>
-                <a href="images/@Html.DisplayFor(modelItem => item.StaffImageName)" target="_blank">@Html.DisplayFor(modelItem => item.StaffImageName)</a>
             </td>
             <td>
                 <a class= "btn btn-dark m-1" asp-action="Edit" asp-route-id="@item.Id">Ändra</a> |

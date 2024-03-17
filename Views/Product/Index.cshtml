@@ -23,9 +23,6 @@
             <th>
                 @Html.DisplayNameFor(model => model.ProductCategory)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ProductImageName)
-            </th>
             <th>Hantera produkter:</th>
         </tr>
     </thead>
@@ -40,10 +37,6 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.ProductCategory)
-            </td>
-            <td>
-               <a href="images/@Html.DisplayFor(modelItem => item.ProductImageName)" target="_blank"> @Html.DisplayFor(modelItem => item.ProductImageName)
-            </a>
             </td>
             <td>
                 <a class="btn btn-dark m-1" asp-action="Edit" asp-route-id="@item.Id">Ändra</a> |

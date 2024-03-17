@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HarmoniBackendAdmin")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5c808f7de8aae985af96bebe59f0ad42522a9b26")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bea4f3a20c1aaea1934495076270d2e1cd43663d")]
 [assembly: System.Reflection.AssemblyProductAttribute("HarmoniBackendAdmin")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HarmoniBackendAdmin")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

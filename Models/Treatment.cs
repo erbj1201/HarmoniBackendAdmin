@@ -1,5 +1,4 @@
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace HarmoniBackendAdmin.Models;
 // class constructor
@@ -18,12 +17,5 @@ public class Treatment{
      [Required(ErrorMessage = "Behandlingen måste ha en kategori. Välj en kategori")]
      [Display(Name = "Kategori:")]
     public string? TreatmentCategory {get; set;}
-    [Display(Name = "Bild:")]
-    public string? TreatmentImageName {get; set;}
-
-    [Display(Name = "Bild:")]
-    [NotMapped]
-    public IFormFile? TreatmentImageFile {get; set;}
-
     public List <Booking>? Bookingss {get; set;}
 }

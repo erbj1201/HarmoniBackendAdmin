@@ -10,11 +10,6 @@ public class Staff{
     [Required(ErrorMessage = "Namn måste anges. Ange ett för- och efternamn")]
      [Display(Name = "Namn:")]
     public string? StaffName {get; set;}
-     [Display(Name = "Bild:")]
-    public string? StaffImageName {get; set;}
-    [Display(Name = "Bild:")]
-    [NotMapped]
-    public IFormFile? StaffImageFile { get; set; }
 }
 
 

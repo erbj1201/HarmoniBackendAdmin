@@ -14,14 +14,10 @@ namespace HarmoniBackendAdmin.Controllers;
     public class ProductController : Controller
     {
         private readonly HarmoniDbContext _context;
-        private readonly IWebHostEnvironment _hostEnvironment;
-        private readonly string wwwRootPath;
 
-        public ProductController(HarmoniDbContext context, IWebHostEnvironment hostEnvironment)
+        public ProductController(HarmoniDbContext context)
         {
             _context = context;
-            _hostEnvironment = hostEnvironment;
-            wwwRootPath = hostEnvironment.WebRootPath;
         }
         // GET: Product
         public async Task<IActionResult> Index()
@@ -55,23 +51,10 @@ namespace HarmoniBackendAdmin.Controllers;
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,ProductName,ProductPrice,ProductCategory,ProductImageFile")] Product product)
+        public async Task<IActionResult> Create([Bind("Id,ProductName,ProductPrice,ProductCategory")] Product product)
         {
             if (ModelState.IsValid)
             {
-                //Check for image
-                if(product.ProductImageFile!=null){
-                    //Unique filename to image
-                    string productFileName = Path.GetFileNameWithoutExtension(product.ProductImageFile.FileName);
-                    string extension = Path.GetExtension(product.ProductImageFile.FileName);
-                    //Save to model that save in db
-                    product.ProductImageName = productFileName = productFileName.Replace(" ", String.Empty) + DateTime.Now.ToString("yymmssfff") + extension;
-                    string path =Path.Combine(wwwRootPath + "/images", productFileName);
-
-                    //store in filesystem
-                    using var fileStream = new FileStream(path, FileMode.Create);
-                    await product.ProductImageFile.CopyToAsync(fileStream);
-                }
                 _context.Add(product);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -98,7 +81,7 @@ namespace HarmoniBackendAdmin.Controllers;
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,ProductName,ProductPrice,ProductCategory,ProductImageName")] Product product)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,ProductName,ProductPrice,ProductCategory")] Product product)
         {
             if (id != product.Id)
             {

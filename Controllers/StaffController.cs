@@ -14,13 +14,9 @@ namespace HarmoniBackendAdmin.Controllers;
     public class StaffController : Controller
     {
         private readonly HarmoniDbContext _context;
-        private readonly IWebHostEnvironment _hostEnvironment;
-        private readonly string wwwRootPath;
-        public StaffController(HarmoniDbContext context, IWebHostEnvironment hostEnvironment)
+        public StaffController(HarmoniDbContext context)
         {
             _context = context;
-            _hostEnvironment = hostEnvironment;
-            wwwRootPath = hostEnvironment.WebRootPath;
         }
         
 
@@ -55,24 +51,10 @@ namespace HarmoniBackendAdmin.Controllers;
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,StaffName,StaffImageFile")] Staff staff)
+        public async Task<IActionResult> Create([Bind("Id,StaffName")] Staff staff)
         {
             if (ModelState.IsValid)
             {
-  //Check for image
-                if(staff.StaffImageFile!=null){
-                    //Unique filename to image
-                    string staffFileName = Path.GetFileNameWithoutExtension(staff.StaffImageFile.FileName);
-                    string extension = Path.GetExtension(staff.StaffImageFile.FileName);
-                    //Save to model that save in db
-                    staff.StaffImageName = staffFileName = staffFileName.Replace(" ", String.Empty) + DateTime.Now.ToString("yymmssfff") + extension;
-                    string path =Path.Combine(wwwRootPath + "/images", staffFileName);
-
-                    //store in filesystem
-                    using(var fileStream= new FileStream (path, FileMode.Create)){
-                        await staff.StaffImageFile.CopyToAsync(fileStream);
-                    }
-                }
 
                 _context.Add(staff);
                 await _context.SaveChangesAsync();
@@ -99,7 +81,7 @@ namespace HarmoniBackendAdmin.Controllers;
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,StaffName,StaffImageName")] Staff staff)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,StaffName")] Staff staff)
         {
             if (id != staff.Id)
             {

@@ -15,14 +15,10 @@ namespace HarmoniBackendAdmin.Controllers;
     public class TreatmentController : Controller
     {
         private readonly HarmoniDbContext _context;
-        private readonly IWebHostEnvironment _hostEnvironment;
-        private readonly string wwwRootPath;
 
-        public TreatmentController(HarmoniDbContext context, IWebHostEnvironment hostEnvironment)
+        public TreatmentController(HarmoniDbContext context)
         {
             _context = context;
-             _hostEnvironment = hostEnvironment;
-            wwwRootPath = hostEnvironment.WebRootPath;
         }
 
         // GET: Treatment
@@ -59,23 +55,11 @@ namespace HarmoniBackendAdmin.Controllers;
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,TreatmentName,TreatmentDescription,TreatmentPrice,TreatmentCategory,TreatmentImageFile")] Treatment treatment)
+        public async Task<IActionResult> Create([Bind("Id,TreatmentName,TreatmentDescription,TreatmentPrice,TreatmentCategory")] Treatment treatment)
         {
             if (ModelState.IsValid)
             {
-                 //Check for image
-                if(treatment.TreatmentImageFile!=null){
-                    //Unique filename to image
-                    string treatmentFileName = Path.GetFileNameWithoutExtension(treatment.TreatmentImageFile.FileName);
-                    string extension = Path.GetExtension(treatment.TreatmentImageFile.FileName);
-                    //Save to model that save in db
-                    treatment.TreatmentImageName = treatmentFileName = treatmentFileName.Replace(" ", String.Empty) + DateTime.Now.ToString("yymmssfff") + extension;
-                    string path =Path.Combine(wwwRootPath + "/images", treatmentFileName);
-
-                    //store in filesystem
-                    using var fileStream = new FileStream(path, FileMode.Create);
-                    await treatment.TreatmentImageFile.CopyToAsync(fileStream);
-                }
+                
                 _context.Add(treatment);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -103,7 +87,7 @@ namespace HarmoniBackendAdmin.Controllers;
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,TreatmentName,TreatmentDescription,TreatmentPrice,TreatmentCategory,TreatmentImageName")] Treatment treatment)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,TreatmentName,TreatmentDescription,TreatmentPrice,TreatmentCategory")] Treatment treatment)
         {
             if (id != treatment.Id)
             {

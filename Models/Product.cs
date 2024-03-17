@@ -1,6 +1,5 @@
 //Include
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 //namespace
 namespace HarmoniBackendAdmin.Models;
@@ -22,10 +21,4 @@ public class Product
     [Required(ErrorMessage = "Produkten måste ha en kategori. Välj en kategori")]
     [Display(Name = "Kategori:")]
     public string? ProductCategory { get; set; }
-    [Display(Name = "Bild:")]
-    public string? ProductImageName { get; set; }
-
-    [Display(Name = "Bild:")]
-    [NotMapped]
-    public IFormFile? ProductImageFile { get; set; }
 }
