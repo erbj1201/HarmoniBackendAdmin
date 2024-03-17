@@ -18,31 +18,58 @@ Web apit tillåter metoderna get för booking, treatment, staff och product. Met
 #### Endpoints och användning
 Denna URL användes av mig lokalt på datorn: http://localhost:5108/api
 
+
 Treatment
+
+
 Metod Ändpunkt Beskrivning
+
 
 GET /treatment Hämtar alla behandlingar
 
 
+
+
 Product
+
+
 Metod Ändpunkt Beskrivning
+
+
 
 GET /product Hämtar alla produkter
 
 
+
+
 Staff
+
+
 Metod Ändpunkt Beskrivning
+
+
 GET /staff Hämtar all personal
 
 
+
+
 Booking
+
+
 Metod Ändpunkt Beskrivning
+
+
 GET /bookig Hämtar alla bokningar
+
+
 POST /booking Lägger till ny bokning
 
 
 Format på objekt
+
+
 Treatment 
+
 
 
 {
@@ -124,5 +151,5 @@ Booking
 
     "productCategory": "Schampo & balsam"
 
-    
+
   }
